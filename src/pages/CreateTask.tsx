@@ -51,7 +51,9 @@ const CreateTask = () => {
         value={issue.deadline.toISOString().slice(0, 16)}
       />
       <input type="text" onChange={onChangeAssignee} />
-      {ASSIGNEE.filter((item) => item.includes(issue.assignee)).map((item, idx) => <div key={idx}>{item}</div>)}
+      {ASSIGNEE.filter(item => item.includes(issue.assignee)).map((item, idx) => (
+        <div key={idx}>{item}</div>
+      ))}
       <select onChange={onChangeIssueState} defaultValue={issue.state}>
         <option value={TODO}>{TODO}</option>
         <option value={IN_PROGRESS}>{IN_PROGRESS}</option>
