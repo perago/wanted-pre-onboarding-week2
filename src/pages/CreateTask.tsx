@@ -6,7 +6,6 @@ import { IssueState } from '../types/types';
 
 const [TODO, IN_PROGRESS, COMPLETED] = ISSUE_STATE;
 
-
 const CreateTask = () => {
   const [issue, setIssue] = useState<IssueState>({
     timestamp: Date.now(),

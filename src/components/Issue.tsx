@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import styled from 'styled-components';
 
 import { IssueState } from '../types/types';
@@ -18,9 +18,9 @@ const Issue = () => {
       </div>
     </Wrapper>
   );
-}
+};
 
-export default Issue
+export default Issue;
 
 const Wrapper = styled.section`
   border: 2px solid blue;
