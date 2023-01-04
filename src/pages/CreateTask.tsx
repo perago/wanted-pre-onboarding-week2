@@ -1,16 +1,11 @@
 import React, { ChangeEvent, useState } from 'react';
+import styled from 'styled-components';
 
 import { ISSUE_STATE, ASSIGNEE } from '../constants/constants';
+import { IssueState } from '../types/types';
 
 const [TODO, IN_PROGRESS, COMPLETED] = ISSUE_STATE;
-interface IssueState {
-  timestamp: number;
-  title: string;
-  content: string;
-  state: string;
-  deadline: Date;
-  assignee: string;
-}
+
 
 const CreateTask = () => {
   const [issue, setIssue] = useState<IssueState>({
@@ -42,7 +37,7 @@ const CreateTask = () => {
     console.info(issue);
   };
   return (
-    <article>
+    <Wrapper>
       <input type="text" onChange={onChangeTitle} value={issue.title} />
       <textarea onChange={onChangeContent} value={issue.content} />
       <input
@@ -62,8 +57,14 @@ const CreateTask = () => {
       <button type="button" onClick={onPublishIssue}>
         발행
       </button>
-    </article>
+    </Wrapper>
   );
 };
 
 export default CreateTask;
+
+const Wrapper = styled.article`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+`;
