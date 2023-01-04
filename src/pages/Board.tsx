@@ -2,7 +2,6 @@ import React from 'react';
 
 import { ISSUE_STATE } from '../constants/constants';
 
-
 const Board = () => {
   return (
     <article>
